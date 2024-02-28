@@ -2,8 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cart-deployment
+  labels:
+    app: cart
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: cart
@@ -14,6 +16,6 @@ spec:
     spec:
       containers:
       - name: cart
-        image: your-cart-image:latest
+        image: <your-cart-image>
         ports:
         - containerPort: 8080

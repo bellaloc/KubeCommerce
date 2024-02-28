@@ -1,21 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: catalog-deployment
-  labels:
-    app: catalog
+  name: cart
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: catalog
+      app: cart
   template:
     metadata:
       labels:
-        app: catalog
+        app: cart
     spec:
       containers:
-      - name: catalog
-        image: <your-catalog-image>
+      - name: cart
+        image: your-image-name:tag
         ports:
         - containerPort: 8080

@@ -1,21 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: catalog-deployment
-  labels:
-    app: catalog
+  name: order-deployment
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: catalog
+      app: order
   template:
     metadata:
       labels:
-        app: catalog
+        app: order
     spec:
       containers:
-      - name: catalog
-        image: <your-catalog-image>
+      - name: order
+        image: your-order-image:latest
         ports:
         - containerPort: 8080

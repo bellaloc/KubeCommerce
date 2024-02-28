@@ -13,7 +13,7 @@ spec:
         app: auth
     spec:
       containers:
-      - name: auth
-        image: your-auth-image:latest
+      - name: auth-container
+        image: your-auth-image:tag
         ports:
         - containerPort: 8080

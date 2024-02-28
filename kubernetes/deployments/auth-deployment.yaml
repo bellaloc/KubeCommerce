@@ -1,21 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: catalog-deployment
-  labels:
-    app: catalog
+  name: auth-deployment
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: catalog
+      app: auth
   template:
     metadata:
       labels:
-        app: catalog
+        app: auth
     spec:
       containers:
-      - name: catalog
-        image: <your-catalog-image>
+      - name: auth
+        image: your-auth-image:latest
         ports:
         - containerPort: 8080
